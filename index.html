@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P2-M23</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+        }
+        .activity {
+            margin-bottom: 20px;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        span[style*="color: red;"] {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function updateActivities() {
+            const selectedTime = document.getElementById('class-time').value;
+
+            const activity2 = document.getElementById('activity-2');
+            const step4Activity3 = document.querySelector('#activity-3 .step-4');
+
+            if (selectedTime === '45') {
+                if (activity2) activity2.style.display = 'none';
+                if (step4Activity3) step4Activity3.style.display = 'table-row';
+            } else if (selectedTime === '40') {
+                if (activity2) activity2.style.display = 'none';
+                if (step4Activity3) step4Activity3.style.display = 'none';
+            } else {
+                if (activity2) activity2.style.display = 'block';
+                if (step4Activity3) step4Activity3.style.display = 'table-row';
+            }
+
+            document.getElementById('selected-time').innerText = `Tiempo efectivo de clase: ${selectedTime} minutos`;
+        }
+
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook-P2-M23</h1>
+    </div>
+    <div class="container">
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateActivities()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+        <!-- Aquí se insertarán las actividades -->
+        
+        <div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('activity_0_content')">
+        <div class="title">🔍 Actividad 0: Revisión de Misión</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Verificar que los dispositivos y el espacio estén listos para trabajar.
+        </div>
+    </div>
+    <div id="activity_0_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1:</strong> Verificar que todos los dispositivos (tabletas o computadoras) estén encendidos, conectados a internet, y que Scratch esté abierto en modo "Crear". Confirmar que las Magic Tablets estén disponibles y que el espacio esté organizado para trabajar cómodamente.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    No se utiliza diálogo con los estudiantes en esta etapa.
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div id="activity-1" class="activity" data-time="2">
+    <div class="banner" onclick="toggleContent('activity_1_content')">
+        <div class="title">🎉 Actividad 1: Saludo y Ritual Gnius Club ⏰ Tiempo: 2 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Bienvenida y presentación de los objetivos del día.
+        </div>
+    </div>
+    <div id="activity_1_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (0,5 minutos):</strong> Proyectar (Diapositiva 1): "¡Bienvenidos, Genios de la Repetición!" y saludar a los estudiantes con entusiasmo, mencionando el tema del día.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Hola, Genios de la Repetición! 🌟 ¡Qué emoción verlos de nuevo listos para una nueva aventura en el mundo de Scratch! Hoy vamos a practicar cómo hacer que nuestros personajes repitan acciones usando bucles. ¡Prepárense para crear animaciones donde los movimientos se repiten una y otra vez de forma mágica!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (0,5 minutos):</strong> Proyectar (Diapositiva 2): "¡Mi Estado de Repetición!" y pedir a los estudiantes que indiquen su estado de ánimo usando poses temáticas relacionadas con la repetición.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Antes de comenzar, ¡necesito saber cómo se sienten mis genios de la repetición! 🔁 Si están listos para programar acciones repetitivas, ¡levanten los brazos como si estuvieran girando sin parar! 🔄 Si necesitan un poquito más de energía, ¡crucen los brazos y hagan cara de estar concentrados en la secuencia! 🤔 ¡A ver esas poses!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (0,5 minutos):</strong> Proyectar (Diapositiva 3): "¡Ritual de Gratitud de Repetición!" y guiar a los estudiantes en el ritual.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Excelente, Genios! Ahora, ¡es momento de nuestro ritual Gnius! Juntemos nuestras manos y digamos juntos: '¡Gracias por estar aquí, Genios! Hoy vamos a practicar cómo hacer que nuestros personajes repitan acciones en Scratch. ¡A dar lo mejor de nosotros y a divertirnos programando!'"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4 (0,5 minutos):</strong> Proyectar (Diapositiva 4): "¡Objetivos de Repetición de Hoy!" y explicar los objetivos de la misión de manera clara y sencilla.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Y ahora, los <span style="color: red; font-weight: bold;">objetivos</span> de nuestra misión de hoy! 1. Vamos a practicar el uso de los bloques de bucles 'repetir' y 'por siempre' en Scratch para que nuestros personajes realicen acciones repetitivas. 2. ¡Vamos a crear animaciones donde los movimientos y las acciones se repitan una y otra vez de forma mágica y creativa! ¿Listos para este reto de repetición?"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div id="activity-2" class="activity" data-time="5">
+    <div class="banner" onclick="toggleContent('activity_2_content')">
+        <div class="title">💡 Actividad 2: Brain Vitamin ⏰ Tiempo: 5 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Ejercicio interactivo para practicar patrones lógicos y repetitivos.
+        </div>
+    </div>
+    <div id="activity_2_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (1 minuto):</strong> Proyectar (Diapositiva 5): "¡Despertando la Lógica de la Repetición!" Explicar que van a realizar una secuencia de acciones con un patrón lógico que se repite.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Hola de nuevo, Genios de la Repetición! 🚀 Ahora vamos a activar nuestra mente con una secuencia de <span style="color: red; font-weight: bold;">acciones lógicas</span> que se repiten. Vamos a seguir un patrón y a repetir las acciones. ¡Prepárense para despertar la lógica de la repetición!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (2 minutos):</strong> Proyectar (Diapositiva 6): "¡Mi Patrón de Repetición Lógica!" Dar las instrucciones para la creación de la secuencia de acciones con un patrón lógico.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Ahora vamos a crear una <span style="color: red; font-weight: bold;">secuencia</span> con un <span style="color: red; font-weight: bold;">patrón lógico</span> que se repita! Vamos a hacer una secuencia de tres acciones: primero, vamos a aplaudir una vez. Luego, vamos a chasquear los dedos una vez. Finalmente, vamos a tocar nuestro hombro una vez. Después, vamos a repetir toda la secuencia. ¡Practiquemos juntos esta secuencia lógica!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (2 minutos):</strong> Proyectar (Diapositiva 7): "¡Mi Repetición Creativa!" Pedir a los estudiantes que repitan la secuencia original varias veces y luego creen una secuencia diferente con su propio patrón lógico.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Excelente, Genios! Ahora, vamos a repetir la <span style="color: red; font-weight: bold;">secuencia original</span> varias veces. ¡A practicar la repetición lógica! Ahora que ya dominamos esa secuencia, los reto a crear su propia <span style="color: red; font-weight: bold;">secuencia</span> con un <span style="color: red; font-weight: bold;">patrón lógico</span>. ¡Inventen su propia repetición creativa y muéstrenmela! ¡Prepárense para practicar sus bucles en Scratch!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div id="activity-3" class="activity" data-time="30">
+    <div class="banner" onclick="toggleContent('activity_3_content')">
+        <div class="title">🚀 Actividad 3: Challenge ⏰ Tiempo: 30 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Programación de bucles para crear animaciones repetitivas.
+        </div>
+    </div>
+    <div id="activity_3_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (1 minuto):</strong> Proyectar (Diapositiva 8): "¡El Gran Desafío de la Repetición!" y presentar el desafío con la temática unificada, los nombres de los retos y los tres niveles (Rookie, Master, Hacker).
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Genios de la repetición, ha llegado el momento de programar acciones repetitivas en Scratch! 🚀 Hoy usaremos los bloques de bucles para que nuestros personajes se muevan, bailen y sigan laberintos. Tenemos tres desafíos emocionantes: '¡Camina y Camina!' (Rookie), '¡Baila sin Parar!' (Master) y '¡Sigue el Laberinto!' (Hacker). ¡A elegir su reto de repetición y a programar!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (2 minutos):</strong> Proyectar (Diapositiva 9): "¡Detalles de los Retos de Repetición!" Describir los pasos y metas específicas de cada nivel.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    """¡Aquí están los detalles de cada desafío para que elijan su camino!<br><br>
+                    <strong>Nivel Rookie: '¡Camina y Camina!'</strong><br>
+                    <span style="color: red; font-weight: bold;">Objetivo:</span> Programar un personaje para que camine de un lado a otro de la pantalla utilizando un bucle "repetir".<br>
+                    <span style="color: red; font-weight: bold;">Instrucciones:</span> Abre un nuevo proyecto en Scratch. Elige un personaje (sprite). Programa al personaje para que:<br>
+                    - Utilice un bloque "repetir" para que avance una cantidad de pasos.<br>
+                    - Utilice un bloque para girar o cambiar de dirección (ej: "rebotar si toca un borde").<br>
+                    - Repita la secuencia de avance y cambio de dirección.<br>
+                    <span style="color: red; font-weight: bold;">Condiciones:</span> La animación debe utilizar un bloque "repetir" para el movimiento.<br>
+                    <span style="color: red; font-weight: bold;">Consejo:</span> Ajusta el número de repeticiones y el número de pasos para que el personaje no se salga de la pantalla.<br><br>
+
+                    <strong>Nivel Master: '¡Baila sin Parar!'</strong><br>
+                    <span style="color: red; font-weight: bold;">Objetivo:</span> Programar un personaje para que realice una secuencia de movimientos (como un baile) usando un bloque "por siempre".<br>
+                    <span style="color: red; font-weight: bold;">Instrucciones:</span> Abre un nuevo proyecto en Scratch. Elige un personaje y crea al menos dos disfraces (ej: uno en una posición y otro en otra). Programa al personaje para que:<br>
+                    - Utilice un bloque "por siempre" para que la acción se repita continuamente.<br>
+                    - Utilice bloques de "cambiar disfraz" y "mover" para simular un movimiento de baile.<br>
+                    - Utilice el bloque "esperar" para controlar el tiempo de cada movimiento.<br>
+                    <span style="color: red; font-weight: bold;">Condiciones:</span> La animación debe utilizar un bloque "por siempre".<br>
+                    <span style="color: red; font-weight: bold;">Consejo:</span> Utiliza diferentes disfraces para hacer que el movimiento parezca más dinámico.<br><br>
+
+                    <strong>Nivel Hacker: '¡Sigue el Laberinto!'</strong><br>
+                    <span style="color: red; font-weight: bold;">Objetivo:</span> Programar un personaje para que avance por un laberinto utilizando bucles anidados (un bucle dentro de otro).<br>
+                    <span style="color: red; font-weight: bold;">Instrucciones:</span> Abre un nuevo proyecto en Scratch. Elige un personaje y crea un laberinto sencillo en el fondo. Programa al personaje para que:<br>
+                    - Utilice un bloque "por siempre" para que la acción se repita continuamente.<br>
+                    - Utilice un bloque "repetir" dentro del bloque "por siempre" para avanzar recto una cierta cantidad de pasos.<br>
+                    - Si el personaje toca una pared debe cambiar de dirección.<br>
+                    - Utilice otro bloque "repetir" dentro del bloque "por siempre" para girar a la derecha o a la izquierda una cantidad de grados.<br>
+                    <span style="color: red; font-weight: bold;">Condiciones:</span> La animación debe utilizar un bloque "por siempre" y uno o más bloques "repetir".<br>
+                    <span style="color: red; font-weight: bold;">Consejo:</span> Utiliza diferentes valores para los giros y los pasos para que el personaje explore todo el laberinto."""
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (20 minutos):</strong> Proyectar (Diapositiva 10): "¡A Programar la Repetición, Genios!" Temporizador de 20 minutos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Es su turno, genios de la repetición! 🚀 Tienen 20 minutos para practicar cómo hacer que sus personajes realicen acciones repetitivas en Scratch. Recuerden los nombres de sus retos y dejen que su creatividad guíe la programación. ¡La magia de la repetición está en sus manos!"
+                </td>
+            </tr>
+            <tr class="step-4">
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4 (5 minutos):</strong> Proyectar (Diapositiva 11): "¡Ajustes de Repetición Finales!" Temporizador de 5 minutos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Grandes programadores, es momento de pulir sus animaciones! ⏱️ Tienen 5 minutos para probar y ajustar sus proyectos. Asegúrense de que las acciones repetitivas de sus personajes sean fluidas y de que todo funcione como lo imaginaron. ¡A perfeccionar sus mundos de repetición!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 5 (2 minutos):</strong> Proyectar (Diapositiva 12): Reflexionar sobre el proceso creativo.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Impresionante trabajo, genios de la repetición! 🌟 Reflexionemos juntos: ¿Qué aprendieron al practicar la programación con bucles? ¿Qué fue lo más desafiante y cómo lo superaron? ¿Qué consejo le darían a otros programadores de repetición? ¡Compartan sus reflexiones y celebremos sus logros!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div id="activity-4" class="activity" data-time="10">
+    <div class="banner" onclick="toggleContent('activity_4_content')">
+        <div class="title">🤝 Actividad 4: Team Gnius ⏰ Tiempo: 10 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Colaboración para mejorar animaciones con bucles.
+        </div>
+    </div>
+    <div id="activity_4_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (0.5 minutos):</strong> Proyectar (Diapositiva 14): "¡Uniendo Mentes de Repetición!" Mostrar instrucciones para formar equipos pequeños y explicar que se compartirán las animaciones y se darán ideas para mejorarlas.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Genios de la repetición, es hora de unir nuestras mentes brillantes! 🌟 Formen equipos de dos o tres programadores para compartir sus animaciones y darnos ideas geniales sobre cómo mejorar la fluidez de la repetición. Juntos podemos hacer que cada animación sea aún más mágica."
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (0.5 minutos):</strong> Proyectar (Diapositiva 15): "¡Equipos de Repetición en 30 Segundos!" Temporizador de 30 segundos para formar los equipos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Tienen 30 segundos para unirse a sus compañeros de programación de repetición! ⏱️ Busquen sus equipos rápidamente y prepárense para una lluvia de ideas creativas. ¡Equipos listos, animaciones listas!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (0.5 minutos):</strong> Proyectar (Diapositiva 16): "¡Magic Tablets de Ideas de Repetición!" Explicar la importancia de usar las Magic Tablets para registrar ideas clave y preparar las mejoras de las animaciones.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Programadores de repetición, saquen sus Magic Tablets! 📝 Anoten todas las ideas geniales que les inspiren de las animaciones de sus compañeros. Recuerden que cada detalle cuenta para hacer que la repetición sea más fluida y mágica. ¡Sus notas serán la clave para mejorar!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4 (0.5 minutos):</strong> Proyectar (Diapositiva 17): "¡Listos para la Repetición Creativa!" Temporizador de 30 segundos para recoger las Magic Tablets.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Tienen 30 segundos para tomar sus Magic Tablets y prepararse para inspirar y ser inspirados con repeticiones creativas! ¡Manos a la obra, genios de la programación!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 5 (4 minutos):</strong> Proyectar (Diapositiva 18): "¡Think-Pair-Share: Repetición en Equipo!" Explicar el método <span style="color: red; font-weight: bold;">Think-Pair-Share</span> y guiar a los equipos para reflexionar y colaborar para mejorar la fluidez de la repetición en sus animaciones.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Vamos a usar el poder del <span style="color: red; font-weight: bold;">Think-Pair-Share</span> para mejorar nuestras animaciones! Primero, piensen individualmente en cómo mejorarían la fluidez y coherencia de la repetición en la animación de su compañero. Luego, compartan esas ideas y elijan las mejores. ¡Finalmente, trabajen juntos para implementar esos cambios y hacer que sus animaciones sean aún más mágicas!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 6 (3 minutos):</strong> Proyectar (Diapositiva 19): "¡Optimizando la Repetición de Nuestras Animaciones!" Instrucciones para la colaboración activa con un temporizador de 3 minutos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Manos a la obra, programadores de repetición! ⏱️ Tienen 3 minutos para aplicar las mejoras que discutieron. Recuerden que cada detalle cuenta para que la repetición en su animación sea aún más fluida y coherente. ¡A trabajar en equipo con toda su magia creativa!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 7 (1 minuto):</strong> Proyectar (Diapositiva 20): "¡Reflexiones de Equipo de Repetición!" Preguntas para reflexionar sobre la colaboración y los resultados.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Reflexionemos sobre esta aventura de programación de repetición! ¿Qué aprendieron trabajando juntos? ¿Cómo hicieron que la repetición en las animaciones de sus compañeros fuera aún más fluida y coherente? ¿Cuál fue la mejor idea que surgió de esta colaboración? ¡Compartan su sabiduría y celebremos el poder de la programación de repetición colectiva!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div id="activity-5" class="activity" data-time="4">
+    <div class="banner" onclick="toggleContent('activity_5_content')">
+        <div class="title">🏅 Actividad 5: Honor the Lab ⏰ Tiempo: 4 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Reflexión final y organización del espacio de trabajo.
+        </div>
+    </div>
+    <div id="activity_5_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (0.5 minutos):</strong> Proyectar (Diapositiva 21): "¡Misión de Repetición Cumplida, Programadores!" Mostrar los objetivos iniciales y discutir con los estudiantes si se cumplieron.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Genios de la repetición, llegó el momento de celebrar nuestras increíbles animaciones! 🌟 Revisemos juntos nuestros <span style="color: red; font-weight: bold;">objetivos</span>: ¿Practicamos el uso de los bloques de bucles 'repetir' y 'por siempre' en Scratch? ¿Creamos animaciones donde las acciones se repiten de forma mágica y creativa? ¡Estoy seguro de que cada uno hizo un trabajo brillante! ¿Cómo se sienten al respecto?"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (0.5 minutos):</strong> Felicitar a los estudiantes por su participación y esfuerzo, sin destacar a individuos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Hoy, todos fueron increíbles programadores de repetición. Dieron vida a animaciones donde los personajes repiten acciones de manera fluida y creativa, exploraron el poder de los bucles y trabajaron en equipo como verdaderos genios. ¡Estoy muy orgulloso de todos los programadores de repetición que hay aquí! ¡Un aplauso para su creatividad, lógica y dedicación!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (3 minutos):</strong> Proyectar (Diapositiva 22): "¡Honremos Nuestro Espacio de Repetición!" Dar instrucciones para recoger los materiales utilizados y organizar el espacio de trabajo.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Ahora, como verdaderos programadores de repetición, debemos honrar nuestro espacio de trabajo. Recojan sus Magic Tablets y todos los materiales que usamos, y dejen el aula lista para nuevas aventuras de programación. ¡Recuerden que cuidar nuestro espacio es parte de la magia de la programación!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+    </div>
+</body>
+</html>
